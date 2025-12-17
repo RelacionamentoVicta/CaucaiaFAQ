@@ -1,0 +1,423 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Entrega do Empreendimento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #6ECC01 0%, #357C00 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6ECC01 0%, #C5F167 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            background: #357C00;
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #007C24;
+        }
+
+        .faq-question.active {
+            background: #007C24;
+        }
+
+        .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            background: #F0F5CD;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #357C00;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: #C5F167;
+            border: 2px solid #6ECC01;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            color: #357C00;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            color: #357C00;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #007C24;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .footer {
+            background: #357C00;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: #C5F167;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header h2 {
+                font-size: 1.2em !important;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .faq-question {
+                padding: 15px 20px;
+                font-size: 1em;
+            }
+
+            .faq-answer.active {
+                padding: 20px;
+            }
+
+            .footer > div {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>VITÓRIA CAUCAIA</h1>
+            <h2 style="font-size: 1.5em; margin-top: 10px; opacity: 0.9;">FAQ - Entrega do Empreendimento</h2>
+            <p>Todas as informações importantes sobre a entrega das unidades</p>
+        </div>
+
+        <div class="content">
+            <div class="highlight-box">
+                <h3>📅 Data de Entrega das Chaves</h3>
+                <p>20 de Dezembro de 2025 | 08h às 11h</p>
+                <small style="color: #357C00;">*Apenas para clientes com contratos habilitados</small>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🔑 Como será realizada a entrega das chaves?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Data:</strong> 20 de dezembro de 2025</p>
+                    <p><strong>Horário:</strong> Das 08h às 11h</p>
+                    <p><strong>Requisito:</strong> Apenas contratos habilitados poderão retirar as chaves</p>
+                    <p>A entrega será realizada mediante agendamento prévio. Certifique-se de que toda a documentação esteja em dia.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>⚡ Como faço a ligação de energia elétrica?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A ligação de energia deve ser solicitada <strong>diretamente com a concessionária</strong>.</p>
+                    <p><strong>Documentos necessários:</strong></p>
+                    <p>• Foto do medidor de energia</p>
+                    <p>• Contrato de compra ou financiamento do imóvel</p>
+                    <p>Entre em contato com a concessionária local para agendar a ligação.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🔥 E a ligação de gás?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A ligação de gás será <strong>individualizada</strong> após a instalação dos medidores.</p>
+                    <p>O processo ocorrerá conforme a contratação da concessionária pelo condomínio.</p>
+                    <p>Aguarde comunicado do síndico sobre os prazos e procedimentos específicos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>💧 Como funcionará o fornecimento de água?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Inicialmente, a água estará ligada com <strong>consumo por rateio</strong>, medido pelo condomínio.</p>
+                    <p>A <strong>individualização</strong> dos medidores será decidida em assembleia de condôminos.</p>
+                    <p>O rateio será calculado proporcionalmente entre as unidades até a decisão da assembleia.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🌐 Como contratar internet?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A ligação de internet será <strong>individualizada</strong> conforme contratação direta com provedor de sua escolha.</p>
+                    <p>Cada morador deverá contratar seu próprio serviço de internet junto às operadoras disponíveis na região.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🏠 Posso fazer mudanças no meu apartamento?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Mudanças e reformas deverão ser aprovadas conforme definição do síndico.</p>
+                    <p>Consulte o regulamento interno e entre em contato com a administração antes de realizar qualquer modificação.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>📚 Onde encontro o manual do proprietário e projetos?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>O manual do proprietário e todos os projetos estão disponibilizados no <strong>portal do cliente</strong>.</p>
+                    <p>Acesse sua área restrita no portal para fazer o download dos documentos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🔧 Como solicitar assistência técnica?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Todas as solicitações de assistência técnica devem ser feitas através do <strong>portal do cliente</strong>.</p>
+                    <p>Acesse sua área restrita, vá em "Assistência Técnica" e registre sua solicitação detalhadamente.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🏊‍♂️ Como usar as áreas comuns?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A utilização e reserva das áreas comuns estará disponível <strong>conforme liberação do síndico</strong>.</p>
+                    <p>Aguarde comunicado oficial sobre os procedimentos de reserva e regulamento de uso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🚗 Como funcionam as vagas de garagem?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>As vagas rotativas funcionarão conforme estabelecido em contrato.</p>
+                    <p>A definição para uso privativo será decidida em assembleia de condôminos.</p>
+                    <p>Consulte seu contrato para verificar os direitos específicos da sua unidade.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❄️ Posso instalar ar-condicionado?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Há sugestões em projeto para instalação de máquinas de ar-condicionado.</p>
+                    <p>A definição final sobre instalação e local será decidida em assembleia de condôminos.</p>
+                    <p>Consulte o projeto no portal do cliente para verificar os pontos sugeridos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>💰 Quando cessam os juros de obra?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Os juros de obra devem cessar após a documentação completa do empreendimento.</p>
+                    <p><strong>Previsão:</strong> Até 60 dias após a averbação do habite-se</p>
+                    <p>O processo de documentação está em andamento para finalização dentro do prazo previsto.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: #007C24;">
+                <h3 style="color: #C5F167;">📋 Status Atual do Empreendimento</h3>
+                <p style="color: white !important; font-weight: 600;">✅ Habite-se emitido em 16/07/2025</p>
+                <p style="color: white !important; font-weight: 600;">✅ Assembleia de instalação realizada em 12/08/2025</p>
+                <p style="font-size: 0.9em; margin-top: 15px; color: #C5F167 !important;">* Ata da assembleia disponível no portal do cliente</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>🎯 Precisa de Mais Informações?</h3>
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <p style="font-weight: 600; margin-bottom: 8px;">📞 Telefone / WhatsApp</p>
+                    <p style="font-size: 1.1em;">(85) 3512-3512</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-weight: 600; margin-bottom: 8px;">📧 E-mail</p>
+                    <p style="font-size: 1.1em;">relacionamento@victa.eng.br</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                Acesse também o portal do cliente para acompanhar todas as atualizações do seu empreendimento
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer.active').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.classList.remove('active');
+                    item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                }
+            });
+            
+            // Toggle current answer
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                element.classList.remove('active');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('active');
+                element.classList.add('active');
+                icon.textContent = '×';
+            }
+        }
+
+        // Add smooth scrolling animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
